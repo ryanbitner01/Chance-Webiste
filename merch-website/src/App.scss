@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "./variables.scss" as *;
 @import "bootstrap";
 
@@ -15,5 +16,5 @@
 
 .btn:hover,
 .btn:active {
-	color: darken($secondary, 20%);
+	color: color.scale($secondary, $lightness: -15%);
 }

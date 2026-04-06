@@ -10,12 +10,18 @@ function NavBar() {
 
 			<ul className="navbar-nav">
 				<li className="nav-item">
-					<a className="nav-link social-link" href="#">
+					<a
+						className="nav-link social-link"
+						target="__blank"
+						href="https://twitch.tv/chanc3sr">
 						Twitch
 					</a>
 				</li>
 				<li className="nav-item">
-					<a className="nav-link social-link" href="#">
+					<a
+						className="nav-link social-link"
+						target="__blank"
+						href="https://discord.gg/ScQffdcvhQ">
 						Discord
 					</a>
 				</li>
