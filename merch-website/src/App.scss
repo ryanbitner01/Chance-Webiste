@@ -1,0 +1,19 @@
+@use "./variables.scss" as *;
+@import "bootstrap";
+
+.rubik-bold {
+	font-family: "Rubik", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 500;
+	font-style: normal;
+}
+
+.btn {
+	padding: 1rem 2rem;
+	--bs-btn-color: white;
+}
+
+.btn:hover,
+.btn:active {
+	color: darken($secondary, 20%);
+}

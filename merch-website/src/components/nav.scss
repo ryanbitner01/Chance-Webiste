@@ -1,0 +1,33 @@
+@use "../variables.scss" as *;
+
+.material-symbols-outlined {
+	color: $primary;
+
+	&:hover {
+		color: darken($primary, 15%);
+	}
+}
+nav {
+	margin-left: 2rem;
+	margin-top: 1rem;
+	margin-right: 1rem;
+}
+
+.btn {
+	--bs-btn-padding-x: 0;
+	--bs-btn-padding-y: 0;
+}
+
+.navbar .nav-link.social-link {
+	color: white; // force white text
+	font-family: "Rubik", sans-serif;
+	font-weight: 500;
+
+	&:hover {
+		color: $secondary; // hover color
+	}
+}
+
+.cart {
+	float: right;
+}
