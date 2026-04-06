@@ -1,6 +1,6 @@
-import ChanceLogoText from "../assets/ChanceLogoText.svg";
+import ChanceLogoText from "../../assets/ChanceLogoText.svg";
 import "./home.scss";
-import NavBar from "./nav";
+import NavBar from "../nav/nav";
 
 function Home() {
 	return (
