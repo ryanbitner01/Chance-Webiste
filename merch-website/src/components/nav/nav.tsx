@@ -1,14 +1,29 @@
+import { useState } from "react";
 import "./nav.scss";
 import "material-symbols";
+import HamburgerMenu from "./hamburgerMenu/hamburgerMenu";
 
 function NavBar() {
+	const [hamburgerOpen, setHamburgerVisible] = useState(false);
+
+	const handleClick = () => {
+		setHamburgerVisible(!hamburgerOpen);
+	};
+
 	return (
 		<nav className="navbar navbar-expand-lg fixed-top">
-			<button className="btn nav-link">
-				<span className="material-symbols-outlined">menu</span>
-			</button>
-
-			<ul className="navbar-nav">
+			<div className="hamburger-menu nav-button">
+				<button onClick={handleClick} className="btn nav-link cart">
+					<span className="material-symbols-outlined">menu</span>
+				</button>
+			</div>
+			<ul className="navbar-nav ">
+				<li className="nav-item">
+					<a className="nav-link social-link">Home</a>
+				</li>
+				<li className="nav-item">
+					<a className="nav-link social-link">Merch</a>
+				</li>
 				<li className="nav-item">
 					<a
 						className="nav-link social-link"
@@ -26,6 +41,11 @@ function NavBar() {
 					</a>
 				</li>
 			</ul>
+
+			<HamburgerMenu
+				onMenuItemClicked={() => setHamburgerVisible(false)}
+				isOpen={hamburgerOpen}
+			/>
 
 			<div className="ms-auto">
 				<button className="btn nav-link cart">

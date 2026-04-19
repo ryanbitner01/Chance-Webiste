@@ -1,0 +1,42 @@
+@use "/src/variables.scss" as *;
+
+.menu ul {
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding: 1rem 2rem;
+	display: flex;
+	gap: 1rem;
+	flex-direction: column;
+	background-color: $tertiary;
+	height: 100dvh;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+	transition: transform 0.3s ease;
+}
+
+.menu.closed ul {
+	transform: translateX(-100%);
+}
+
+.menu.open ul {
+	transform: translateX(0);
+}
+
+.menu-item {
+	display: block;
+	cursor: pointer;
+
+	&:hover {
+		color: $primary;
+		text-decoration: underline $primary;
+	}
+
+	& a {
+		color: black;
+		text-decoration: none;
+
+		&:hover {
+			color: $primary;
+		}
+	}
+}

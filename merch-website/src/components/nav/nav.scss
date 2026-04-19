@@ -19,6 +19,10 @@ nav {
 	--bs-btn-padding-y: 0;
 }
 
+.btn.nav-link {
+	padding: 1rem 0;
+}
+
 .navbar .nav-link.social-link {
 	color: white; // force white text
 	font-family: "Rubik", sans-serif;
@@ -31,4 +35,27 @@ nav {
 
 .cart {
 	float: right;
+}
+
+.navbar .navbar-nav {
+	flex-direction: row;
+	gap: 1rem;
+}
+
+.hamburger-menu {
+	display: none;
+}
+
+@media (width <= 600px) {
+	.navbar .navbar-nav {
+		display: none;
+	}
+
+	.hamburger-menu {
+		display: unset;
+	}
+}
+
+.nav-link {
+	cursor: pointer;
 }
