@@ -64,3 +64,9 @@ nav {
 NavLink.active.nav-link.social-link {
 	color: $secondary;
 }
+
+@media (prefers-color-scheme: light) {
+	.navbar .nav-link.social-link {
+		color: #1e1e1e; // force white text
+	}
+}

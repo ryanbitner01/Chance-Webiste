@@ -10,27 +10,35 @@ function HamburgerMenu({ onMenuItemClicked, isOpen }: HamburgerMenuProps) {
 	return (
 		<div className={`menu ${isOpen ? "open" : "closed"}`}>
 			<ul>
-				<li onClick={onMenuItemClicked} className="menu-item">
+				<li className="menu-item">
 					<NavLink
+						onClick={onMenuItemClicked}
 						to="/"
 						className={({ isActive }) => (isActive ? "active" : "")}>
 						home
 					</NavLink>
 				</li>
-				<li onClick={onMenuItemClicked} className="menu-item">
+				<li className="menu-item">
 					<NavLink
+						onClick={onMenuItemClicked}
 						to="/merch"
 						className={({ isActive }) => (isActive ? "active" : "")}>
 						Merch
 					</NavLink>
 				</li>
-				<li onClick={onMenuItemClicked} className="menu-item">
-					<a target="__blank" href="https://twitch.tv/chanc3sr">
+				<li className="menu-item">
+					<a
+						onClick={onMenuItemClicked}
+						target="__blank"
+						href="https://twitch.tv/chanc3sr">
 						Twitch
 					</a>
 				</li>
-				<li onClick={onMenuItemClicked} className="menu-item">
-					<a target="__blank" href="https://discord.gg/ScQffdcvhQ">
+				<li className="menu-item">
+					<a
+						onClick={onMenuItemClicked}
+						target="__blank"
+						href="https://discord.gg/ScQffdcvhQ">
 						Discord
 					</a>
 				</li>

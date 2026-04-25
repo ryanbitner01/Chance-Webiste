@@ -1,7 +1,16 @@
-$primary: #ffb703;
+$primary: #eaa700;
 $secondary: #00c2a8;
 $tertiary: #aeb2b1;
-$body-bg: #424242;
+$body-bg: white;
 $navbar-light-active-color: $secondary;
-$body-color: white;
+$body-color: #1e1e1e;
 $body-font-family: "Rubik", sans-serif;
+$enable-dark-mode: true;
+
+//dark
+$primary-dark: #ffb703;
+$secondary-dark: #00c2a8;
+$tertiary-dark: #aeb2b1;
+$body-bg-dark: #424242;
+
+//light
