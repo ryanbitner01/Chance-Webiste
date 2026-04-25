@@ -1,13 +1,9 @@
 import Home from "./components/home/home";
-import HamburgerMenu from "./components/nav/hamburgerMenu/hamburgerMenu";
+
+const root = document.getElementById("root");
 
 function App() {
-	return (
-		<>
-			<HamburgerMenu (onMenuItemClicked) />
-			<Home />;
-		</>
-	);
+	return <Home />;
 }
 
 export default App;

@@ -1,3 +1,4 @@
+import { NavLink } from "react-router";
 import "./hamburgerMenu.scss";
 
 interface HamburgerMenuProps {
@@ -7,13 +8,21 @@ interface HamburgerMenuProps {
 
 function HamburgerMenu({ onMenuItemClicked, isOpen }: HamburgerMenuProps) {
 	return (
-		<div className={`menu ${isOpen ? 'open' : 'closed'}`}>
+		<div className={`menu ${isOpen ? "open" : "closed"}`}>
 			<ul>
 				<li onClick={onMenuItemClicked} className="menu-item">
-					<a>Home</a>
+					<NavLink
+						to="/"
+						className={({ isActive }) => (isActive ? "active" : "")}>
+						home
+					</NavLink>
 				</li>
 				<li onClick={onMenuItemClicked} className="menu-item">
-					<a>Merch</a>
+					<NavLink
+						to="/merch"
+						className={({ isActive }) => (isActive ? "active" : "")}>
+						Merch
+					</NavLink>
 				</li>
 				<li onClick={onMenuItemClicked} className="menu-item">
 					<a target="__blank" href="https://twitch.tv/chanc3sr">

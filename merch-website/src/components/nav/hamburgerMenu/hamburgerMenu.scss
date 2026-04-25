@@ -27,16 +27,21 @@
 	cursor: pointer;
 
 	&:hover {
-		color: $primary;
-		text-decoration: underline $primary;
+		color: $secondary;
+		text-decoration: underline $secondary;
 	}
 
-	& a {
+	& NavLink,
+	a {
 		color: black;
 		text-decoration: none;
 
 		&:hover {
-			color: $primary;
+			color: $secondary;
 		}
 	}
+}
+
+NavLink.active {
+	color: $secondary;
 }

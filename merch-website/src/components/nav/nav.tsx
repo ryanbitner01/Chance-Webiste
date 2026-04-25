@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./nav.scss";
 import "material-symbols";
 import HamburgerMenu from "./hamburgerMenu/hamburgerMenu";
+import { NavLink } from "react-router";
 
 function NavBar() {
 	const [hamburgerOpen, setHamburgerVisible] = useState(false);
@@ -19,10 +20,22 @@ function NavBar() {
 			</div>
 			<ul className="navbar-nav ">
 				<li className="nav-item">
-					<a className="nav-link social-link">Home</a>
+					<NavLink
+						to="/"
+						className={({ isActive }) =>
+							isActive ? "active nav-link social-link" : "nav-link social-link"
+						}>
+						Home
+					</NavLink>
 				</li>
 				<li className="nav-item">
-					<a className="nav-link social-link">Merch</a>
+					<NavLink
+						to="/merch"
+						className={({ isActive }) =>
+							isActive ? "active nav-link social-link" : "nav-link social-link"
+						}>
+						Merch
+					</NavLink>
 				</li>
 				<li className="nav-item">
 					<a

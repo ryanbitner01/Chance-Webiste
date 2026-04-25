@@ -10,8 +10,9 @@
 }
 nav {
 	margin-left: 2rem;
-	margin-top: 1rem;
+	margin-top: 0;
 	margin-right: 1rem;
+	height: 4rem;
 }
 
 .btn {
@@ -58,4 +59,8 @@ nav {
 
 .nav-link {
 	cursor: pointer;
+}
+
+NavLink.active.nav-link.social-link {
+	color: $secondary;
 }

@@ -1,0 +1,21 @@
+@use "/src/variables.scss" as *;
+
+.merch-image {
+	border-radius: 0.5rem;
+	width: 9.5rem;
+	aspect-ratio: 3 / 4;
+	object-fit: cover;
+	padding-bottom: 0.5rem;
+}
+
+.price {
+	color: $primary;
+	font-size: 1rem;
+}
+
+@media (width <= 600px) {
+	.merch-image {
+		aspect-ratio: 5 / 4;
+		width: 100%;
+	}
+}
