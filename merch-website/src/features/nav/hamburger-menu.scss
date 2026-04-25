@@ -1,0 +1,78 @@
+@use "/src/variables.scss" as *;
+
+/* Backdrop */
+.menu-backdrop {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.35);
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.25s ease;
+	z-index: 10;
+}
+
+.menu-backdrop.show {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+/* Menu */
+.menu ul {
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding: 1.25rem 2rem;
+	display: flex;
+	gap: 1rem;
+	flex-direction: column;
+	background-color: $tertiary;
+	height: 100dvh;
+	width: 280px;
+
+	box-shadow: 4px 0 16px rgba(0, 0, 0, 0.2);
+	transition: transform 0.3s ease;
+	z-index: 20;
+	will-change: transform;
+	list-style: none;
+}
+
+.menu ul {
+	list-style: none;
+	margin: 0;
+	padding: 1.5rem 1.25rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+
+/* Slide animation */
+.menu.closed ul {
+	transform: translateX(-105%);
+}
+
+.menu.open ul {
+	transform: translateX(0);
+}
+
+/* Items */
+.menu-item {
+	padding: 0.75rem 0.5rem;
+	border-radius: 8px;
+	transition: background 0.2s ease;
+
+	& a,
+	NavLink {
+		color: white;
+		text-decoration: none;
+		transition: color 0.2s ease;
+	}
+
+	&:hover a {
+		color: $secondary;
+	}
+}
+
+/* Active route */
+:global(.active) {
+	color: $secondary;
+}

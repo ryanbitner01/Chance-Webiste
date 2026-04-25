@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./nav.scss";
 import "material-symbols";
-import HamburgerMenu from "./hamburgerMenu/hamburgerMenu";
-import { NavLink } from "react-router";
+import HamburgerMenu from "./HamburgerMenu";
+import { NavLink } from "react-router-dom";
 
-function NavBar() {
+const NavBar = () => {
 	const [hamburgerOpen, setHamburgerVisible] = useState(false);
 
 	const handleClick = () => {
@@ -67,6 +67,6 @@ function NavBar() {
 			</div>
 		</nav>
 	);
-}
+};
 
 export default NavBar;

@@ -1,9 +1,9 @@
 import ChanceLogoText from "../../assets/ChanceLogoText.svg";
 import "./home.scss";
-import NavBar from "../nav/nav";
+import NavBar from "../nav/Nav";
 import { NavLink } from "react-router";
 
-function Home() {
+const Home = () => {
 	return (
 		<>
 			<NavBar></NavBar>
@@ -17,6 +17,6 @@ function Home() {
 			</div>
 		</>
 	);
-}
+};
 
 export default Home;

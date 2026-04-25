@@ -1,4 +1,4 @@
-import "./merchListCell.scss";
+import "../styles/merch-list-cell.scss";
 
 interface MerchCellProps {
 	imageSrc: any;
@@ -15,7 +15,7 @@ function MerchListCell({
 }: MerchCellProps) {
 	return (
 		<div>
-			<img className="merch-image" src={"src/assets/shirt.jpg"}></img>
+			<img className="merch-image" src={imageSrc}></img>
 			<h2>{name}</h2>
 			{priceRangeHigh === priceRangeLow ? (
 				<p className="price">{priceRangeLow}$</p>
