@@ -21,7 +21,7 @@ function MerchListCell({
 				<p className="price">{priceRangeLow}$</p>
 			) : (
 				<p className="price">
-					{priceRangeLow} - {priceRangeHigh}$
+					{priceRangeLow}-{priceRangeHigh}$
 				</p>
 			)}
 		</div>

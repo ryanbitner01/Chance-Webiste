@@ -12,7 +12,7 @@ interface MerchItem {
 const merchListItems: MerchItem[] = [
 	{
 		name: "Chanc3 T-Shirt",
-		priceHigh: 12,
+		priceHigh: 8,
 		priceLow: 8,
 		imageSrc: "src/assets/shirt.jpg",
 	},

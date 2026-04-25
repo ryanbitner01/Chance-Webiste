@@ -1,6 +1,7 @@
 import ChanceLogoText from "../../assets/ChanceLogoText.svg";
 import "./home.scss";
 import NavBar from "../nav/nav";
+import { NavLink } from "react-router";
 
 function Home() {
 	return (
@@ -8,11 +9,11 @@ function Home() {
 			<NavBar></NavBar>
 			<div className="container">
 				<img className="flex" src={ChanceLogoText}></img>
-				<button
-					type="button"
-					className="btn btn-secondary merch-button rubik-bold">
+				<NavLink
+					className="btn btn-secondary merch-button rubik-bold"
+					to="/merch">
 					Buy Merch
-				</button>
+				</NavLink>
 			</div>
 		</>
 	);
