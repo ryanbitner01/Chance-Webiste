@@ -21,9 +21,11 @@ function App() {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route element={<Layout />}>
+				<Route element={<Layout backButton={false} />}>
 					<Route path="/" element={<Home />} />
 					<Route path="/merch" element={<MerchList />} />
+				</Route>
+				<Route element={<Layout backButton={true} />}>
 					<Route path="/merch/:id" element={<MerchDetails />}></Route>
 				</Route>
 			</Routes>

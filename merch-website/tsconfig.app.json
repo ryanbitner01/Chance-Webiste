@@ -29,7 +29,9 @@
 			"@domain/*": ["src/domain/*"],
 			"@data/*": ["src/data/*"],
 			"@assets/*": ["src/assets/*"],
-			"@components/*": ["src/components/*"]
+			"@components/*": ["src/components/*"],
+			"@di/*": ["src/di/*"],
+			"@shared/*": ["src/shared/*"]
 		},
 		"ignoreDeprecations": "6.0"
 	},

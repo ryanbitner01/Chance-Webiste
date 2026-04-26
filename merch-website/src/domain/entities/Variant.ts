@@ -1,5 +1,7 @@
 export interface Variant {
-	color: string;
 	name: string;
 	id: string;
+	image?: string;
+	size: string;
+	price: number;
 }

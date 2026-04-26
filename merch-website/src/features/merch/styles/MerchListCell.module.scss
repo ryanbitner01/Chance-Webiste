@@ -1,6 +1,6 @@
 @use "/src/variables.scss" as *;
 
-.merch-image {
+.image {
 	border-radius: 0.5rem;
 	width: 9.5rem;
 	aspect-ratio: 3 / 4;
@@ -13,8 +13,14 @@
 	font-size: 1rem;
 }
 
+.cardLink {
+	display: block;
+	text-decoration: none;
+	color: inherit;
+}
+
 @media (width <= 600px) {
-	.merch-image {
+	.image {
 		aspect-ratio: 5 / 4;
 		width: 100%;
 	}

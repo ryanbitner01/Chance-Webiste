@@ -1,10 +1,12 @@
-import "../styles/merch-list-cell.scss";
+import { NavLink } from "react-router-dom";
+import styles from "../styles/MerchListCell.module.scss";
 
 interface MerchCellProps {
 	imageSrc: any;
 	name: string;
 	priceRangeLow: number;
 	priceRangeHigh: number;
+	id: string;
 }
 
 function MerchListCell({
@@ -12,19 +14,20 @@ function MerchListCell({
 	name,
 	priceRangeHigh,
 	priceRangeLow,
+	id,
 }: MerchCellProps) {
 	return (
-		<div>
-			<img className="merch-image" src={imageSrc}></img>
+		<NavLink className={styles.cardLink} to={`/merch/${id}`}>
+			<img className={styles.image} src={imageSrc}></img>
 			<h2>{name}</h2>
 			{priceRangeHigh === priceRangeLow ? (
-				<p className="price">{priceRangeLow}$</p>
+				<p className={styles.price}>{priceRangeLow}$</p>
 			) : (
-				<p className="price">
+				<p className={styles.price}>
 					{priceRangeLow}-{priceRangeHigh}$
 				</p>
 			)}
-		</div>
+		</NavLink>
 	);
 }
 

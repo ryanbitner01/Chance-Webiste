@@ -86,44 +86,153 @@ merch-website
 ├─ src
 │  ├─ .DS_Store
 │  ├─ App.tsx
-│  ├─ Message.tsx
 │  ├─ app.scss
 │  ├─ assets
 │  │  ├─ ChanceLogoText.svg
 │  │  ├─ hero.png
 │  │  ├─ react.svg
+│  │  ├─ red-shirt.jpg
 │  │  ├─ shirt.jpg
 │  │  └─ vite.svg
 │  ├─ data
 │  │  └─ repositories
+│  │     └─ MerchRepositoryFake.ts
+│  ├─ di
+│  │  ├─ create-repos.ts
+│  │  └─ repositories.ts
 │  ├─ domain
 │  │  ├─ entities
-│  │  │  └─ variant.ts
+│  │  │  ├─ MerchItem.ts
+│  │  │  └─ Variant.ts
 │  │  └─ repositories
-│  │     └─ merchRepository.ts
+│  │     └─ MerchRepository.ts
 │  ├─ features
 │  │  ├─ home
 │  │  │  ├─ Home.tsx
 │  │  │  └─ home.scss
 │  │  ├─ merch
 │  │  │  ├─ components
-│  │  │  │  ├─ MerchListCell.scss
+│  │  │  │  ├─ MerchDetailsSkeleton.tsx
 │  │  │  │  ├─ MerchListCell.tsx
-│  │  │  │  ├─ VariantSelector.scss
-│  │  │  │  └─ VariantSelector.tsx
+│  │  │  │  ├─ MerchListSkeleton.tsx
+│  │  │  │  ├─ SizeSelector.tsx
+│  │  │  │  ├─ VariantSelector
+│  │  │  │  │  ├─ VariantSelector.tsx
+│  │  │  │  │  ├─ types.ts
+│  │  │  │  │  └─ variant-selector.scss
+│  │  │  │  └─ merch-details-skeleton.scss
+│  │  │  ├─ hooks
+│  │  │  │  ├─ useMerchDetails.ts
+│  │  │  │  └─ useMerchList.ts
 │  │  │  ├─ pages
-│  │  │  │  ├─ MerchDetails.tsx
-│  │  │  │  └─ MerchList.tsx
-│  │  │  └─ styles
-│  │  │     ├─ MerchList.scss
-│  │  │     └─ merch-details.scss
+│  │  │  │  ├─ MerchDetails
+│  │  │  │  │  ├─ MerchDetails.tsx
+│  │  │  │  │  └─ merch-details.scss
+│  │  │  │  └─ MerchList
+│  │  │  │     ├─ MerchList.tsx
+│  │  │  │     └─ merch-list.scss
+│  │  │  ├─ styles
+│  │  │  │  ├─ merch-list-cell.scss
+│  │  │  │  ├─ merch-list-skeleton.scss
+│  │  │  │  └─ size-selector.scss
+│  │  │  └─ utils
+│  │  │     └─ merch.utils.ts
 │  │  └─ nav
 │  │     ├─ HamburgerMenu.tsx
 │  │     ├─ Layout.tsx
 │  │     ├─ Nav.tsx
 │  │     ├─ hamburger-menu.scss
+│  │     ├─ layout.scss
 │  │     └─ nav.scss
 │  ├─ main.tsx
+│  ├─ shared
+│  │  └─ components
+│  │     ├─ Error.tsx
+│  │     └─ error.scss
+│  └─ variables.scss
+├─ tsconfig.app.json
+├─ tsconfig.json
+├─ tsconfig.node.json
+└─ vite.config.ts
+
+```
+```
+merch-website
+├─ .DS_Store
+├─ README.md
+├─ eslint.config.js
+├─ index.html
+├─ package-lock.json
+├─ package.json
+├─ public
+│  ├─ favicon.svg
+│  └─ icons.svg
+├─ src
+│  ├─ .DS_Store
+│  ├─ App.tsx
+│  ├─ app.scss
+│  ├─ assets
+│  │  ├─ ChanceLogoText.svg
+│  │  ├─ hero.png
+│  │  ├─ react.svg
+│  │  ├─ red-shirt.jpg
+│  │  ├─ shirt.jpg
+│  │  └─ vite.svg
+│  ├─ data
+│  │  └─ repositories
+│  │     └─ MerchRepositoryFake.ts
+│  ├─ di
+│  │  ├─ create-repos.ts
+│  │  └─ repositories.ts
+│  ├─ domain
+│  │  ├─ entities
+│  │  │  ├─ MerchItem.ts
+│  │  │  └─ Variant.ts
+│  │  └─ repositories
+│  │     └─ MerchRepository.ts
+│  ├─ features
+│  │  ├─ home
+│  │  │  ├─ Home.tsx
+│  │  │  └─ home.scss
+│  │  ├─ merch
+│  │  │  ├─ components
+│  │  │  │  ├─ MerchDetailsSkeleton.tsx
+│  │  │  │  ├─ MerchListCell.tsx
+│  │  │  │  ├─ MerchListSkeleton.tsx
+│  │  │  │  ├─ SizeSelector.tsx
+│  │  │  │  └─ VariantSelector
+│  │  │  │     ├─ VariantSelector.module.scss
+│  │  │  │     ├─ VariantSelector.tsx
+│  │  │  │     └─ types.ts
+│  │  │  ├─ hooks
+│  │  │  │  ├─ useMerchDetails.ts
+│  │  │  │  └─ useMerchList.ts
+│  │  │  ├─ pages
+│  │  │  │  ├─ MerchDetails.tsx
+│  │  │  │  └─ MerchList.tsx
+│  │  │  ├─ styles
+│  │  │  │  ├─ MerchDetails.module.scss
+│  │  │  │  ├─ MerchDetailsSkeleton.module.scss
+│  │  │  │  ├─ MerchList.module.scss
+│  │  │  │  ├─ MerchListCell.module.scss
+│  │  │  │  ├─ MerchListSkeleton.module.scss
+│  │  │  │  └─ SizeSelector.module.scss
+│  │  │  └─ utils
+│  │  │     └─ merch.utils.ts
+│  │  └─ nav
+│  │     ├─ HamburgerMenu.tsx
+│  │     ├─ Layout.tsx
+│  │     ├─ Nav.tsx
+│  │     ├─ hamburger-menu.scss
+│  │     ├─ layout.scss
+│  │     └─ nav.scss
+│  ├─ main.tsx
+│  ├─ shared
+│  │  ├─ components
+│  │  │  ├─ Error.tsx
+│  │  │  └─ error.scss
+│  │  └─ hooks
+│  │     └─ useMediaQuery.tsx
 │  └─ variables.scss
 ├─ tsconfig.app.json
 ├─ tsconfig.json

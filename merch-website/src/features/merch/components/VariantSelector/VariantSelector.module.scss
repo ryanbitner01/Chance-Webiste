@@ -1,0 +1,59 @@
+@use "/src/variables.scss" as *;
+
+.image {
+	height: 3rem;
+	width: 3rem;
+	border-radius: 50%;
+	object-fit: cover;
+	transition: outline 0.2s ease;
+}
+
+.container {
+	display: flex;
+	gap: 1rem;
+	padding-top: 0.625rem;
+}
+
+.item {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 0.25rem;
+	cursor: pointer;
+}
+
+.item:hover .image,
+.active .image {
+	outline: 2px solid $primary-dark;
+	outline-offset: 2px;
+}
+
+.item:hover .label,
+.active .label {
+	color: $primary-dark;
+}
+
+@media (prefers-color-scheme: light) {
+	.item:hover .image,
+	.active .image {
+		outline-color: $primary;
+	}
+
+	.item:hover .label,
+	.active .label {
+		color: $primary;
+	}
+}
+
+@media (max-width: 600px) {
+	.container {
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		flex-wrap: nowrap;
+		padding-bottom: 0.25rem;
+	}
+	.size {
+		flex: 0 0 auto;
+	}
+}

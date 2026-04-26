@@ -11,6 +11,7 @@
 
 .btn {
 	padding: 1rem 2rem;
+	font-size: 1.5rem;
 	--bs-btn-color: white;
 }
 
@@ -34,4 +35,40 @@ h2 {
 
 h3 {
 	font-size: 0.875rem;
+}
+
+.flex {
+	display: flex;
+
+	&--center {
+		justify-content: center;
+		align-items: center;
+	}
+
+	&--stretch-height {
+		height: calc(100dvh - var(--nav-height));
+	}
+
+	&--column {
+		flex-direction: column;
+	}
+}
+
+:root {
+	--nav-height: 4rem;
+}
+
+@media (prefers-color-scheme: light) {
+	.btn.btn-secondary {
+		background: none;
+		color: $secondary;
+
+		&:active {
+			color: white;
+		}
+
+		&:hover {
+			color: color.scale($secondary, $lightness: -15%);
+		}
+	}
 }

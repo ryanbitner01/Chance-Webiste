@@ -1,0 +1,26 @@
+@use "/src/variables.scss" as *;
+
+.items {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+}
+
+.title {
+	position: sticky;
+	top: var(--nav-height); // match your nav height
+	background: $body-bg-dark; // important (see below)
+	z-index: 500;
+}
+
+@media (prefers-color-scheme: light) {
+	.title {
+		background: $body-bg;
+	}
+}
+
+@media (width <= 600px) {
+	.items {
+		display: block;
+	}
+}

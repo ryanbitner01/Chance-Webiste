@@ -1,11 +1,19 @@
 import { Outlet } from "react-router";
 import NavBar from "./Nav";
 
-const Layout = () => {
+import "./layout.scss";
+
+interface Prop {
+	backButton: boolean;
+}
+
+const Layout = ({ backButton = false }: Prop) => {
 	return (
 		<>
-			<NavBar />
-			<Outlet />
+			<NavBar backButton={backButton} />
+			<div className="content">
+				<Outlet />
+			</div>
 		</>
 	);
 };

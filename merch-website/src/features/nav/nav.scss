@@ -2,17 +2,18 @@
 @use "sass:color";
 
 .material-symbols-outlined {
-	color: $primary;
+	color: $primary-dark;
 
 	&:hover {
-		color: color.scale($primary, $lightness: -15%);
+		color: color.scale($primary-dark, $lightness: -15%);
 	}
 }
 nav {
 	margin-left: 2rem;
 	margin-top: 0;
 	margin-right: 1rem;
-	height: 4rem;
+	height: var(--nav-height);
+	background-color: $body-bg-dark;
 }
 
 .btn {
@@ -68,5 +69,31 @@ NavLink.active.nav-link.social-link {
 @media (prefers-color-scheme: light) {
 	.navbar .nav-link.social-link {
 		color: #1e1e1e; // force white text
+	}
+
+	nav {
+		background-color: $body-bg;
+	}
+
+	.material-symbols-outlined {
+		color: $primary;
+
+		&:hover {
+			color: color.scale($primary, $lightness: -15%);
+		}
+	}
+}
+
+.navbar.navbar-expand-lg.sticky-top {
+	padding-right: 2rem;
+	padding-left: 2rem;
+	margin: 0;
+}
+
+@media (max-width: 600px) {
+	.navbar.navbar-expand-lg.sticky-top {
+		padding-right: 1rem;
+		padding-left: 1rem;
+		margin: 0;
 	}
 }
