@@ -35,5 +35,5 @@
 		},
 		"ignoreDeprecations": "6.0"
 	},
-	"include": ["src"]
+	"include": ["src", "tests/home.test.ts"]
 }

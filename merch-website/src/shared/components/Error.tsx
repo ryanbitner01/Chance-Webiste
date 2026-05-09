@@ -7,11 +7,9 @@ interface ErrorProperties {
 
 const Error = ({ message }: ErrorProperties) => {
 	return (
-		<div className="error">
+		<div>
 			<h1>{message ?? "Something went wrong"}</h1>
-			<NavLink className="btn btn-secondary" to="/">
-				Go Home
-			</NavLink>
+			<NavLink to="/">Go Home</NavLink>
 		</div>
 	);
 };

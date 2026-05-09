@@ -1,16 +1,10 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./features/home/Home";
-import MerchList from "./features/merch/pages/MerchList";
-import MerchDetails from "./features/merch/pages/MerchDetails";
-import Layout from "./features/nav/Layout";
+import HomePage from "@features/HomePage";
+import MerchPage from "@features/MerchPage";
+import "./app.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 const mediaQuery = window.matchMedia("(prefers-color-scheme: light)");
 
-const applyTheme = (e: MediaQueryList | MediaQueryListEvent) => {
-	document.documentElement.setAttribute(
-		"data-bs-theme",
-		e.matches ? "light" : "dark",
-	);
-};
+const applyTheme = (e: MediaQueryList | MediaQueryListEvent) => {};
 
 // set initial theme
 applyTheme(mediaQuery);
@@ -21,13 +15,8 @@ function App() {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route element={<Layout backButton={false} />}>
-					<Route path="/" element={<Home />} />
-					<Route path="/merch" element={<MerchList />} />
-				</Route>
-				<Route element={<Layout backButton={true} />}>
-					<Route path="/merch/:id" element={<MerchDetails />}></Route>
-				</Route>
+				<Route index element={<HomePage />}></Route>
+				<Route path="/merch" element={<MerchPage></MerchPage>}></Route>
 			</Routes>
 		</BrowserRouter>
 	);
